@@ -2,7 +2,7 @@
 ## Bayesian Goal-Aware Handover Using Gesture and Spatial Intent Fusion
 
 > **Module:** EE653 Human-Robot Interaction  
-> **Option:** Pre-made Simulator (`hri2.jahanzebgul.com`)  
+> **Option:** Pre-made Simulator (`https://hri-sim2.jahanzebgul.com`)  
 > **Programme:** MSc in Robotics and Embedded AI  
 
 ---
@@ -141,7 +141,7 @@ The robot fires only when **all four** conditions are met simultaneously:
 ## How to Use
 
 ### Step 1 — Open the Simulator
-Go to **[hri2.jahanzebgul.com](https://hri2.jahanzebgul.com)**
+Go to **[https://hri-sim2.jahanzebgul.com](https://hri-sim2.jahanzebgul.com)**
 
 ### Step 2 — Record Robot Operations
 Use the simulator's **Manual Control** panel to move the robot to target positions and save them as operations. Record **4 operations** for full functionality (or at least 2).
