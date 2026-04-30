@@ -133,6 +133,7 @@ The robot fires only when **all four** conditions are met simultaneously:
 📁 repository root
 │
 ├── hri_bayesian_handover_plugin.py   ← Main deliverable (upload to simulator)
+├── franka-operations (1).json        ← Recorded 4 robotic operations (Import at JSON files section to simulator)
 └── README.md                         ← This file
 ```
 
