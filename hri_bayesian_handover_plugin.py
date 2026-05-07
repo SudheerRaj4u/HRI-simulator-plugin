@@ -546,7 +546,7 @@ def _process_hand(frame, hand, centers, boxes):
     Returns a result dict with:
         side, gesture, confidence, intent, posterior, operation,
         operation_index, inside_red, inside_green, stability_key
-    ""
+    """
     global POSTERIOR
 
     side    = resolved_hand_label(hand)
@@ -670,8 +670,8 @@ def process_frame(frame):
     Main entry point called by the simulator on every webcam frame.
 
     Pipeline:
-        Perception → Inference (Bayes + HMM) → Confirmation (>0.80) → Trigger
-    ""
+        Perception -> Inference (Bayes + HMM) -> Confirmation (>0.80) -> Trigger
+    """
     global LAST_TRIGGER_AT, LAST_TRIGGER_KEY, POSTERIOR, STABILITY
 
     # ── STEP 0: READ THE SCENE ───────────────────────────────────────────────
