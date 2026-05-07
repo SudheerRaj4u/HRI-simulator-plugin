@@ -1,7 +1,7 @@
 """
 EE653 Human-Robot Interaction — Final Project Plugin
 =====================================================
-Author  : [Your Name]
+Author  : Sudheer Raj
 Module  : EE653 Human-Robot Interaction
 Option  : Pre-made Simulator (Simulated Perception)
 
