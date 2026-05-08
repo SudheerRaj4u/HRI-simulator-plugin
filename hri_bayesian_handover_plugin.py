@@ -165,7 +165,11 @@ ACTIONABLE_GESTURE_NAMES = frozenset(
     g for (_, g) in FOUR_OPERATION_MAP
 )
 
-PINCH_THRESHOLD = 0.07        # normalised distance for pinch detection
+# PINCH_THRESHOLD = 0.09
+# During a real pinch, the index finger BENDS toward the thumb, so
+# MediaPipe marks indexExtended=False. We only check pinchDistance here.
+# 0.09 is more robust to slight camera-angle variation than 0.07.
+PINCH_THRESHOLD = 0.09        # normalised distance for pinch detection
 
 # ---------------------------------------------------------------------------
 # ── GLOBAL STATE — memory that persists between frames ───────────────────────
@@ -426,7 +430,12 @@ def classify_gesture(hand):
     ring_up       = bool(fs.get("ringExtended"))
     pinky_up      = bool(fs.get("pinkyExtended"))
 
-    if pinch_dist < PINCH_THRESHOLD and index_up:
+    # PINCH: thumb tip close to index tip.
+    # NOTE: we do NOT require index_up here — during a real pinch the index
+    # finger bends toward the thumb, so indexExtended is typically False.
+    # The open_palm rule below already requires pinch_dist > 0.075, so
+    # there is no ambiguity between pinch (<0.09) and open_palm (>0.075).
+    if pinch_dist < PINCH_THRESHOLD:
         return "pinch",         0.97
     if no_thumb >= 4 and with_thumb >= 4 and pinch_dist > 0.075:
         return "open_palm",     0.95
